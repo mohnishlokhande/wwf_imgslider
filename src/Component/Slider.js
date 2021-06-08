@@ -10,13 +10,18 @@ const ImgSlider = () => {
 
     const settings = {
     //   dots: true,
+      // useTransform: true,
+      // useCSS: true,
+      centerMode: true,
       infinite: true,
+      className: "centerCards",
       slidesToShow: 5,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       autoplay: true,
       speed: 3000,
-      autoplaySpeed: 5000,
-      cssEase: "linear",
+      autoplaySpeed: 3000,
+      // cssEase: "linear",
+      
       responsive: [
         {
           breakpoint: 600,
@@ -36,56 +41,56 @@ const ImgSlider = () => {
       ]
     };
 
-    // const [activeSlide0, setActiveSlide0] = useState(0)
-    // const [activeSlide1, setActiveSlide1] = useState(1)
-    // const [activeSlide2, setActiveSlide2] = useState(2)
-    // const DataLeng = ImageData.length
-    // const Left = () => {
-    //   return (
-    //     <>
-    //       <img
-    //         src="long-arrow-left.png"
-    //         alt=""
-    //         style={{
-    //           width: "40px",
-    //           height: "30px",
-    //         }}
-    //       />
-    //     </>
-    //   )
-    // }
-    // const Right = () => {
-    //   return (
-    //     <>
-    //       <img
-    //         src="long-arrow-right .png"
-    //         alt=""
-    //         style={{
-    //           width: "40px",
-    //           height: "30px",
-    //         }}
-    //       />
-    //     </>
-    //   )
-    // }
+    const [activeSlide0, setActiveSlide0] = useState(0)
+    const [activeSlide1, setActiveSlide1] = useState(1)
+    const [activeSlide2, setActiveSlide2] = useState(2)
+    const DataLeng = ImageData.length
+    const Left = () => {
+      return (
+        <>
+          <img
+            src="long-arrow-left.png"
+            alt=""
+            style={{
+              width: "40px",
+              height: "30px",
+            }}
+          />
+        </>
+      )
+    }
+    const Right = () => {
+      return (
+        <>
+          <img
+            src="long-arrow-right .png"
+            alt=""
+            style={{
+              width: "40px",
+              height: "30px",
+            }}
+          />
+        </>
+      )
+    }
   
-    // const Sliderhandler = (i) => {
-    //   setActiveSlide1(i)
-    //   let k = i
-    //   k++
-    //   if (k >= DataLeng) {
-    //     setActiveSlide2(0)
-    //   } else {
-    //     setActiveSlide2(k)
-    //   }
-    //   let y = i
-    //   y--
-    //   if (y < 0) {
-    //     setActiveSlide0(DataLeng - 1)
-    //   } else {
-    //     setActiveSlide0(y)
-    //   }
-    // }
+    const Sliderhandler = (i) => {
+      setActiveSlide1(i)
+      let k = i
+      k++
+      if (k >= DataLeng) {
+        setActiveSlide2(0)
+      } else {
+        setActiveSlide2(k)
+      }
+      let y = i
+      y--
+      if (y < 0) {
+        setActiveSlide0(DataLeng - 1)
+      } else {
+        setActiveSlide0(y)
+      }
+    }
 
     return (
       <div style={{width:"100%"}}>
@@ -103,22 +108,23 @@ const ImgSlider = () => {
                       <div
                         style={{
                           alignSelf: "center",
-                          width: "95%",
+                          width: "90%",
                           borderRadius: "10px",
                           overflow: "hidden",
                           backgroundImage: res.img ? `url(${res.img})` : "",
-                          height:"100%",
-                          backgroundSize:"100% 100%"
-                        //   height: activeSlide0 === i ? "250px" : "",
+                          // height:"100%",
+                          // backgroundSize:"100% 100%",
+                          // height: activeSlide0 === i ? "300px" : "",
                         }}
                         className="gggg"
                         key={i}
+                        // onLoad={Sliderhandler(i)}
                       >
                         <div
                           style={{
                             backgroundImage: res.img ? `url(${res.img})` : "",
                             backgroundPosition:"cover",
-                            // height: activeSlide1 === i ? "250px" : "",
+                            // height: activeSlide1 === i ? "300px" : "",
                             transition: "all 0.8s",
                           }}
                           key={i}
@@ -126,7 +132,7 @@ const ImgSlider = () => {
                           <div
                             style={{
                               backgroundImage: res.img ? `url(${res.img})` : "",
-                            //   height: activeSlide2 === i ? "250px" : "",
+                              // height: activeSlide2 === i ? "300px" : "",
                               transition: "all 0.8s",
                             }}
                             key={i}
