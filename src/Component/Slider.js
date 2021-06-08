@@ -41,56 +41,56 @@ const ImgSlider = () => {
       ]
     };
 
-    const [activeSlide0, setActiveSlide0] = useState(0)
-    const [activeSlide1, setActiveSlide1] = useState(1)
-    const [activeSlide2, setActiveSlide2] = useState(2)
-    const DataLeng = ImageData.length
-    const Left = () => {
-      return (
-        <>
-          <img
-            src="long-arrow-left.png"
-            alt=""
-            style={{
-              width: "40px",
-              height: "30px",
-            }}
-          />
-        </>
-      )
-    }
-    const Right = () => {
-      return (
-        <>
-          <img
-            src="long-arrow-right .png"
-            alt=""
-            style={{
-              width: "40px",
-              height: "30px",
-            }}
-          />
-        </>
-      )
-    }
+    // const [activeSlide0, setActiveSlide0] = useState(0)
+    // const [activeSlide1, setActiveSlide1] = useState(1)
+    // const [activeSlide2, setActiveSlide2] = useState(2)
+    // const DataLeng = ImageData.length
+    // const Left = () => {
+    //   return (
+    //     <>
+    //       <img
+    //         src="long-arrow-left.png"
+    //         alt=""
+    //         style={{
+    //           width: "40px",
+    //           height: "30px",
+    //         }}
+    //       />
+    //     </>
+    //   )
+    // }
+    // const Right = () => {
+    //   return (
+    //     <>
+    //       <img
+    //         src="long-arrow-right .png"
+    //         alt=""
+    //         style={{
+    //           width: "40px",
+    //           height: "30px",
+    //         }}
+    //       />
+    //     </>
+    //   )
+    // }
   
-    const Sliderhandler = (i) => {
-      setActiveSlide1(i)
-      let k = i
-      k++
-      if (k >= DataLeng) {
-        setActiveSlide2(0)
-      } else {
-        setActiveSlide2(k)
-      }
-      let y = i
-      y--
-      if (y < 0) {
-        setActiveSlide0(DataLeng - 1)
-      } else {
-        setActiveSlide0(y)
-      }
-    }
+    // const Sliderhandler = (i) => {
+    //   setActiveSlide1(i)
+    //   let k = i
+    //   k++
+    //   if (k >= DataLeng) {
+    //     setActiveSlide2(0)
+    //   } else {
+    //     setActiveSlide2(k)
+    //   }
+    //   let y = i
+    //   y--
+    //   if (y < 0) {
+    //     setActiveSlide0(DataLeng - 1)
+    //   } else {
+    //     setActiveSlide0(y)
+    //   }
+    // }
 
     return (
       <div style={{width:"100%"}}>
