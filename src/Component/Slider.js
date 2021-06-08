@@ -9,14 +9,31 @@ import "./Slider.css";
 const ImgSlider = () => {
 
     const settings = {
-      dots: true,
+    //   dots: true,
       infinite: true,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 4000,
-      autoplaySpeed: 2000,
-      cssEase: "linear"
+      speed: 3000,
+      autoplaySpeed: 5000,
+      cssEase: "linear",
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
 
     // const [activeSlide0, setActiveSlide0] = useState(0)
@@ -71,9 +88,11 @@ const ImgSlider = () => {
     // }
 
     return (
-      <div>
+      <div style={{width:"100%"}}>
         <h2>Spotlight</h2>
         <p>Lorem Ipsum has been the industry’s standard dummy text ever</p>
+        <div>
+        <div className="backimg__for__slider"></div>
         <Slider {...settings}>
           
             {ImageData &&
@@ -84,7 +103,7 @@ const ImgSlider = () => {
                       <div
                         style={{
                           alignSelf: "center",
-                          width: "97%",
+                          width: "95%",
                           borderRadius: "10px",
                           overflow: "hidden",
                           backgroundImage: res.img ? `url(${res.img})` : "",
@@ -145,6 +164,7 @@ const ImgSlider = () => {
                 )
               })}
         </Slider>
+        </div>
       </div>
     );
  

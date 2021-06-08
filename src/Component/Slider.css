@@ -6,16 +6,17 @@
     transition: all 0.8s;
   }
   .ImageSlider {
-    height: 200px;
+    height: 250px;
     /* height: 100%; */
     transition: height 0.5s;
     transition: all 0.8s;
   }
   .ImagesliderBG {
     padding: 25px;
+    padding-top: 25%;
     color: white;
     filter: brightness(200%);
-    height: inherit;
+    /* height: inherit; */
     /* height: 100%; */
     z-index: 1000;
     text-align: center;
@@ -37,11 +38,61 @@
     background: rgba(0, 0, 0, 0.2);
   } */
   .ImageSlidertxt1 {
-    font-size: 15px;
+    font-size: 24px;
     font-weight: bold;
     font-style: italic;
     font-family: "Playfair Display", serif;
   }
   .ImageSlidertxt2 {
-    font-size: 8px;
+    font-size: 12px;
+  }
+  .backimg__for__slider{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://www.vksarvottam.com/wp-content/uploads/2019/07/YELLOW.jpg);
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    /* bottom: -450px; */
+    top: 220px;
+  }
+.slick-next {
+    right: auto;
+    display: none !important;
+}
+
+  @media all and (max-width:750px){
+    
+    .ImageSlider__widthset{
+      width: 36%;
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .backimg__for__slider{
+      height: 160px;
+      width: 100%;
+      top: 200px;
+      /* bottom: -340px; */
+    }
+    .ImageSlider{
+        height: 165px;
+    }
+    .ImageSlidertxt1 {
+        font-size: 15px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: "Playfair Display", serif;
+        margin-bottom: 4px;
+    }
+    .ImageSlidertxt2 {
+        font-size: 9px;
+    }
+
+    .ImagesliderBG {
+        padding: 25px;
+        padding-top: 28%;
+    }
   }
